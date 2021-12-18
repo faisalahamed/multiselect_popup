@@ -9,7 +9,10 @@ class MultiSelectDialogItem<V> {
 
 class MultiSelectDialog<V> extends StatefulWidget {
   const MultiSelectDialog(
-      {Key? key, required this.items, required this.initialSelectedValues,required this.title})
+      {Key? key,
+      required this.items,
+      required this.initialSelectedValues,
+      required this.title})
       : super(key: key);
 
   final List<MultiSelectDialogItem<V>> items;
@@ -51,7 +54,7 @@ class _MultiSelectDialogState<V> extends State<MultiSelectDialog<V>> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title:  Text(widget.title),
+      title: Text(widget.title),
       contentPadding: const EdgeInsets.only(top: 12.0),
       content: SingleChildScrollView(
         child: ListTileTheme(

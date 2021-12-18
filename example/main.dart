@@ -42,6 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
       context: context,
       builder: (BuildContext context) {
         return MultiSelectDialog(
+          title: "Add Item",
           items: items,
           initialSelectedValues: const <int>{1, 3},
         );

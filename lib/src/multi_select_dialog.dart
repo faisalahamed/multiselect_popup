@@ -9,11 +9,12 @@ class MultiSelectDialogItem<V> {
 
 class MultiSelectDialog<V> extends StatefulWidget {
   const MultiSelectDialog(
-      {Key? key, required this.items, required this.initialSelectedValues})
+      {Key? key, required this.items, required this.initialSelectedValues,required this.title})
       : super(key: key);
 
   final List<MultiSelectDialogItem<V>> items;
   final Set<V> initialSelectedValues;
+  final String title;
 
   @override
   State<StatefulWidget> createState() => _MultiSelectDialogState<V>();
@@ -50,7 +51,7 @@ class _MultiSelectDialogState<V> extends State<MultiSelectDialog<V>> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: const Text('Select animals'),
+      title:  Text(widget.title),
       contentPadding: const EdgeInsets.only(top: 12.0),
       content: SingleChildScrollView(
         child: ListTileTheme(
@@ -66,7 +67,7 @@ class _MultiSelectDialogState<V> extends State<MultiSelectDialog<V>> {
           onPressed: _onCancelTap,
         ),
         TextButton(
-            child: const Text('Add Category'),
+            child: const Text('Add'),
             onPressed: () => Navigator.of(context).pushNamed('/categorylist')),
         TextButton(
           child: const Text('OK'),
